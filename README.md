@@ -54,3 +54,9 @@ Fill in GameController.java. Add keyboard controls so the player can move up and
 
 Result:
 I reviewed the code it gave me, I saw it didn't try and push the boundaries that I put up. After I saw it was what I asked for I pasted it in and added the imports like it said. I ran the game and it gave me a playable game, but only my slab would move.
+
+Prompt 5:
+I noticed the slab was very slow and couldn't keep up with the ball. The AI must've not thought about that relative to the ball speed. I found the slab speed value and increassed it by 6x so I can keep up.
+
+Result:
+Due to the speed increase the game is now actually playable. But I still have the problem with the other slab not moving.

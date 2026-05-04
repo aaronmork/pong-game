@@ -4,7 +4,7 @@ public class GameModel {
     public static final int PADDLE_WIDTH = 10;
     public static final int PADDLE_HEIGHT = 100;
     public static final int BALL_SIZE = 16;
-    public static final int PADDLE_SPEED = 8;
+    public static final int PADDLE_SPEED = 40;
     public static final int INITIAL_LIVES = 3;
     public static final double INITIAL_BALL_SPEED = 5.0;
 
