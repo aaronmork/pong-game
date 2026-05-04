@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 public class GameController {
     private final GameModel model;
     private final GameView view;
+    private Timer gameTimer;
 
     public GameController() {
         model = new GameModel();
@@ -27,13 +28,13 @@ public class GameController {
     }
 
     private void startGameLoop() {
-        Timer gameTimer = new Timer(16, e -> {
+        gameTimer = new Timer(16, e -> {
             if (model.getLeftLives() > 0 && model.getRightLives() > 0) {
                 model.updateAIPaddle();
                 model.updateGameState();
                 view.repaint();
             } else {
-                ((Timer) e.getSource()).stop();
+                gameTimer.stop();
             }
         });
         gameTimer.start();
@@ -47,6 +48,12 @@ public class GameController {
                     model.movePlayerUp();
                 } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
                     model.movePlayerDown();
+                } else if (e.getKeyCode() == KeyEvent.VK_R) {
+                    model.resetGame();
+                    if (!gameTimer.isRunning()) {
+                        gameTimer.start();
+                    }
+                    view.repaint();
                 }
             }
 

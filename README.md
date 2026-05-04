@@ -72,3 +72,9 @@ The opponent slab is not moving, I figure its from being in the GameModel file b
 
 Result:
 My suspicions were correct, the problem was due to the AI control value not being added into the GameController file. The AI not only moves and survives, it does not lose. I fear I have created the best pong player.
+
+Prompt 8:
+Once the game is over I have to close and open a window to play again. I want to be able to restart the game by pressing the "r" key.
+
+Result:
+I veiwed the code and saw that it was very easy to add this in, only 9 lines. The code works and let me reset when I wanted to. AI even made sure that the opponent didn't self destruct when I reset the game.
