@@ -53,6 +53,22 @@ public class GameModel {
         }
     }
 
+    public void updateAIPaddle() {
+        double targetY = ballY + BALL_SIZE / 2.0 - PADDLE_HEIGHT / 2.0;
+
+        if (rightPaddleY + PADDLE_HEIGHT / 2.0 < targetY) {
+            rightPaddleY += PADDLE_SPEED;
+        } else if (rightPaddleY + PADDLE_HEIGHT / 2.0 > targetY) {
+            rightPaddleY -= PADDLE_SPEED;
+        }
+
+        if (rightPaddleY < 0) {
+            rightPaddleY = 0;
+        } else if (rightPaddleY + PADDLE_HEIGHT > GAME_HEIGHT) {
+            rightPaddleY = GAME_HEIGHT - PADDLE_HEIGHT;
+        }
+    }
+
     public void updateGameState() {
         ballX += ballVelocityX;
         ballY += ballVelocityY;

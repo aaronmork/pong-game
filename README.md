@@ -60,3 +60,9 @@ I noticed the slab was very slow and couldn't keep up with the ball. The AI must
 
 Result:
 Due to the speed increase the game is now actually playable. But I still have the problem with the other slab not moving.
+
+Prompt 6:
+In GameModel.java, add a method that allows AI to controll the slab on the right side. Do not modify FrogView or FrogController.
+
+Result:
+The oppnents slab still does not move. I suspect it's because I told it not to mess with other files. I think this caused the code to be added partially.
