@@ -66,3 +66,9 @@ In GameModel.java, add a method that allows AI to controll the slab on the right
 
 Result:
 The oppnents slab still does not move. I suspect it's because I told it not to mess with other files. I think this caused the code to be added partially.
+
+Prompt 7:
+The opponent slab is not moving, I figure its from being in the GameModel file but not being called in the GameController file. Call the method so it allows the slab to be controlled by AI.
+
+Result:
+My suspicions were correct, the problem was due to the AI control value not being added into the GameController file. The AI not only moves and survives, it does not lose. I fear I have created the best pong player.

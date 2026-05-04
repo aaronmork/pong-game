@@ -29,6 +29,7 @@ public class GameController {
     private void startGameLoop() {
         Timer gameTimer = new Timer(16, e -> {
             if (model.getLeftLives() > 0 && model.getRightLives() > 0) {
+                model.updateAIPaddle();
                 model.updateGameState();
                 view.repaint();
             } else {
