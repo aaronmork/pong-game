@@ -34,3 +34,9 @@ Generate three class shells — GameModel.java, GameView.java, GameController.ja
 
 Result:
 Created the framework for my pong game.
+
+Prompt 2:
+Fill in GameModel.java. The model should track: the player's vertical position, the ball (starting in the middle and bounces to a random side to start the game), the player's slab,the lives, and lives remaining (start with 3). Add logic to: move the player's slab up and down, have the ball bounce off the top and bottom of the screen and bounce when it hits a player's slab, have it detect when the ball hits the player's walls and subtract a life from who got hit. No Swing imports.
+
+Result:
+Added more framework to the game and will allow me to go on to GameView to try the game.
