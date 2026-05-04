@@ -40,3 +40,9 @@ Fill in GameModel.java. The model should track: the player's vertical position, 
 
 Result:
 Added more framework to the game and will allow me to go on to GameView to try the game.
+
+Prompt 3:
+Fill in GameView.java. It should take a reference to the model and draw everything the player sees: the player's slab, the ball, the lives, and remaining lives. Show a centered game-over message when the game ends (a player's lives hit 0). The view should only read from the model — it must never change game state.
+
+Result:
+When I ran the code it gave me a window with a ball in the middle along with both of the players slabs. The lives were also shown on the top of the window. The game was not yet playable.

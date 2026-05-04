@@ -1,20 +1,47 @@
 import javax.swing.JPanel;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Dimension;
+import java.awt.Color;
+import java.awt.Font;
 
 public class GameView extends JPanel {
     private final GameModel model;
 
     public GameView(GameModel model) {
         this.model = model;
-        setPreferredSize(new Dimension(800, 600));
-        // Configure the panel for rendering the Pong game.
+        setPreferredSize(new Dimension(GameModel.GAME_WIDTH, GameModel.GAME_HEIGHT));
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        // Render the paddles, ball(s), background, and lives display.
-        // This is a placeholder until the game model and rendering are implemented.
+        Graphics2D g2 = (Graphics2D) g;
+
+        // Draw background.
+        g2.setColor(Color.BLACK);
+        g2.fillRect(0, 0, getWidth(), getHeight());
+
+        // Draw paddles.
+        g2.setColor(Color.WHITE);
+        g2.fillRect(model.getLeftPaddleX(), model.getLeftPaddleY(), GameModel.PADDLE_WIDTH, GameModel.PADDLE_HEIGHT);
+        g2.fillRect(model.getRightPaddleX(), model.getRightPaddleY(), GameModel.PADDLE_WIDTH, GameModel.PADDLE_HEIGHT);
+
+        // Draw ball.
+        g2.fillOval(model.getBallX(), model.getBallY(), GameModel.BALL_SIZE, GameModel.BALL_SIZE);
+
+        // Draw lives.
+        g2.setFont(new Font("SansSerif", Font.BOLD, 20));
+        g2.drawString("Player Left Lives: " + model.getLeftLives(), 20, 30);
+        g2.drawString("Player Right Lives: " + model.getRightLives(), getWidth() - 220, 30);
+
+        // Draw game over if a player has no lives remaining.
+        if (model.getLeftLives() == 0 || model.getRightLives() == 0) {
+            String message = model.getLeftLives() == 0 ? "Right Player Wins!" : "Left Player Wins!";
+            g2.setFont(new Font("SansSerif", Font.BOLD, 36));
+            int textWidth = g2.getFontMetrics().stringWidth(message);
+            int textHeight = g2.getFontMetrics().getHeight();
+            g2.drawString(message, (getWidth() - textWidth) / 2, (getHeight() / 2) + (textHeight / 4));
+        }
     }
 }
