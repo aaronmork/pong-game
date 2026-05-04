@@ -1,10 +1,26 @@
 public class GameModel {
-    // GameModel stores the game state and logic without any Swing dependencies.
-    // This includes paddle positions, ball positions, score/lives, and game rules.
+    // GameModel stores the game state and game rules without using Swing.
+    // It tracks the paddles, ball(s), lives, speed, and scoring logic.
 
     public GameModel() {
-        // Initialize the game state here.
+        // Initialize paddle positions, ball state, lives, and speed.
     }
 
-    // Add model methods for updating game state, querying positions, and resetting the game.
+    public void resetGame() {
+        // Reset lives, ball count, ball speed, and positions.
+    }
+
+    public void updateGameState() {
+        // Update ball positions and apply game rules.
+    }
+
+    public int getLeftPaddleY() {
+        // Return the left paddle's current vertical position.
+        return 0;
+    }
+
+    public int getRightPaddleY() {
+        // Return the right paddle's current vertical position.
+        return 0;
+    }
 }

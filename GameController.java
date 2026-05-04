@@ -15,7 +15,7 @@ public class GameController {
         JFrame frame = new JFrame("Pong Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setContentPane(view);
-        frame.setSize(800, 600);
+        frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

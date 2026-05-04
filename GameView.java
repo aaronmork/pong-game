@@ -1,18 +1,20 @@
 import javax.swing.JPanel;
 import java.awt.Graphics;
+import java.awt.Dimension;
 
 public class GameView extends JPanel {
     private final GameModel model;
 
     public GameView(GameModel model) {
         this.model = model;
-        // Configure the panel appearance here if needed.
+        setPreferredSize(new Dimension(800, 600));
+        // Configure the panel for rendering the Pong game.
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        // Draw the game objects here using the model state.
-        // Example: paddles, ball(s), background, score/lives display.
+        // Render the paddles, ball(s), background, and lives display.
+        // This is a placeholder until the game model and rendering are implemented.
     }
 }
