@@ -2,6 +2,8 @@
 
 FInal school Java class project
 
+AI - Interview
+
 ### Pong Game Specification (MVC Architecture)
 
 #### Model
@@ -46,3 +48,9 @@ Fill in GameView.java. It should take a reference to the model and draw everythi
 
 Result:
 When I ran the code it gave me a window with a ball in the middle along with both of the players slabs. The lives were also shown on the top of the window. The game was not yet playable.
+
+Prompt 4:
+Fill in GameController.java. Add keyboard controls so the player can move up and and with the arrow keys. Add a game loop using a Swing timer that updates the model each tick and redraws the view. Stop the loop when the game is over. Do not modify GameView or GameModel. Show me only the new method — I will paste it in.
+
+Result:
+I reviewed the code it gave me, I saw it didn't try and push the boundaries that I put up. After I saw it was what I asked for I pasted it in and added the imports like it said. I ran the game and it gave me a playable game, but only my slab would move.

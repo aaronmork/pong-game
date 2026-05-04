@@ -1,5 +1,9 @@
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import javax.swing.Timer;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
 
 public class GameController {
     private final GameModel model;
@@ -17,7 +21,44 @@ public class GameController {
         frame.setContentPane(view);
         frame.pack();
         frame.setLocationRelativeTo(null);
+        setupKeyboardControls();
+        startGameLoop();
         frame.setVisible(true);
+    }
+
+    private void startGameLoop() {
+        Timer gameTimer = new Timer(16, e -> {
+            if (model.getLeftLives() > 0 && model.getRightLives() > 0) {
+                model.updateGameState();
+                view.repaint();
+            } else {
+                ((Timer) e.getSource()).stop();
+            }
+        });
+        gameTimer.start();
+    }
+
+    private void setupKeyboardControls() {
+        view.addKeyListener(new KeyListener() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_UP) {
+                    model.movePlayerUp();
+                } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+                    model.movePlayerDown();
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+            }
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+        });
+        view.setFocusable(true);
+        view.requestFocusInWindow();
     }
 
     public static void main(String[] args) {
