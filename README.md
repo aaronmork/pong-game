@@ -96,3 +96,9 @@ I want to make it so everytime the ball hit off a wall, or off a players slab a 
 
 Result:
 AI added a boolean in places where the ball was coded. I overlooked the code it wrote until I understood it fairy well. When I tested out the game it was successful in adding a ping sound everytime the ball bounced.
+
+Prompt 12:
+Create a background that has a checkered pattern. Make the background consist of two colors, Green and Ivory.
+
+Result:
+The background got changed the the color I wanted. But this came with a problem, the slabs, ball, and text on the screen blends in with the ivory color. So I had to come back and change the text, slab and ball color to black.

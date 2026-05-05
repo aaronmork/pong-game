@@ -18,16 +18,23 @@ public class GameView extends JPanel {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
 
-        // Draw background.
-        g2.setColor(Color.BLACK);
-        g2.fillRect(0, 0, getWidth(), getHeight());
+        // Draw checkered background.
+        Color ivory = new Color(255, 255, 240);
+        Color green = new Color(0, 128, 0);
+        int tileSize = 50;
 
-        // Draw paddles.
-        g2.setColor(Color.WHITE);
+        for (int y = 0; y < getHeight(); y += tileSize) {
+            for (int x = 0; x < getWidth(); x += tileSize) {
+                boolean even = ((x / tileSize) + (y / tileSize)) % 2 == 0;
+                g2.setColor(even ? green : ivory);
+                g2.fillRect(x, y, tileSize, tileSize);
+            }
+        }
+
+        // Draw paddles and ball.
+        g2.setColor(Color.BLACK);
         g2.fillRect(model.getLeftPaddleX(), model.getLeftPaddleY(), GameModel.PADDLE_WIDTH, GameModel.PADDLE_HEIGHT);
         g2.fillRect(model.getRightPaddleX(), model.getRightPaddleY(), GameModel.PADDLE_WIDTH, GameModel.PADDLE_HEIGHT);
-
-        // Draw ball.
         g2.fillOval(model.getBallX(), model.getBallY(), GameModel.BALL_SIZE, GameModel.BALL_SIZE);
 
         // Draw lives.
