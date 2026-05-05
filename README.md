@@ -78,3 +78,9 @@ Once the game is over I have to close and open a window to play again. I want to
 
 Result:
 I veiwed the code and saw that it was very easy to add this in, only 9 lines. The code works and let me reset when I wanted to. AI even made sure that the opponent didn't self destruct when I reset the game.
+
+Prompt 9:
+I'm thinking about making the ball speed increase as the player lose lives. Which files would be the best place for the code to go?
+
+Result:
+It told me it would only change in the GameModel file. Once I read over the code and understood it I asked it to add the code into the file. The result turned out great and everytime a live was lost the ball increased in speed.

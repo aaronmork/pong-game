@@ -35,8 +35,12 @@ public class GameModel {
     private void resetBall() {
         ballX = (GAME_WIDTH - BALL_SIZE) / 2.0;
         ballY = (GAME_HEIGHT - BALL_SIZE) / 2.0;
-        ballVelocityX = Math.random() < 0.5 ? -INITIAL_BALL_SPEED : INITIAL_BALL_SPEED;
-        ballVelocityY = (Math.random() * 2 - 1) * INITIAL_BALL_SPEED;
+        
+        // Increase speed as lives decrease
+        double speed = INITIAL_BALL_SPEED + (INITIAL_LIVES - Math.min(getLeftLives(), getRightLives())) * 0.5;
+        
+        ballVelocityX = Math.random() < 0.5 ? -speed : speed;
+        ballVelocityY = (Math.random() * 2 - 1) * speed;
     }
 
     public void movePlayerUp() {
