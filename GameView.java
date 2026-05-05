@@ -35,6 +35,11 @@ public class GameView extends JPanel {
         g2.drawString("Player Left Lives: " + model.getLeftLives(), 20, 30);
         g2.drawString("Player Right Lives: " + model.getRightLives(), getWidth() - 220, 30);
 
+        // Draw "PONG" at the bottom
+        g2.setFont(new Font("SansSerif", Font.BOLD, 24));
+        int pongWidth = g2.getFontMetrics().stringWidth("PONG BY AARON");
+        g2.drawString("PONG BY AARON", (getWidth() - pongWidth) / 2, getHeight() - 20);
+
         // Draw game over if a player has no lives remaining.
         if (model.getLeftLives() == 0 || model.getRightLives() == 0) {
             String message = model.getLeftLives() == 0 ? "Right Player Wins!" : "Left Player Wins!";

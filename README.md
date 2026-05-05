@@ -84,3 +84,9 @@ I'm thinking about making the ball speed increase as the player lose lives. Whic
 
 Result:
 It told me it would only change in the GameModel file. Once I read over the code and understood it I asked it to add the code into the file. The result turned out great and everytime a live was lost the ball increased in speed.
+
+Prompt 10:
+I want to add the word PONG BY AARON on the botton of the window, which file would that go in?
+
+Result:
+I thought it would be in the view file but I just wanted to make sure. It added it perfectly and had no problems.
