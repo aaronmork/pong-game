@@ -1,6 +1,7 @@
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
@@ -32,6 +33,9 @@ public class GameController {
             if (model.getLeftLives() > 0 && model.getRightLives() > 0) {
                 model.updateAIPaddle();
                 model.updateGameState();
+                if (model.consumeBounce()) {
+                    Toolkit.getDefaultToolkit().beep();
+                }
                 view.repaint();
             } else {
                 gameTimer.stop();

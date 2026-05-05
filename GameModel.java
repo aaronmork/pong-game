@@ -19,6 +19,7 @@ public class GameModel {
     private double ballVelocityY;
     private int leftLives;
     private int rightLives;
+    private boolean bounceOccurred;
 
     public GameModel() {
         resetGame();
@@ -29,6 +30,7 @@ public class GameModel {
         rightPaddleY = (GAME_HEIGHT - PADDLE_HEIGHT) / 2;
         leftLives = INITIAL_LIVES;
         rightLives = INITIAL_LIVES;
+        bounceOccurred = false;
         resetBall();
     }
 
@@ -74,23 +76,28 @@ public class GameModel {
     }
 
     public void updateGameState() {
+        bounceOccurred = false;
         ballX += ballVelocityX;
         ballY += ballVelocityY;
 
         if (ballY <= 0) {
             ballY = 0;
             ballVelocityY = -ballVelocityY;
+            bounceOccurred = true;
         } else if (ballY + BALL_SIZE >= GAME_HEIGHT) {
             ballY = GAME_HEIGHT - BALL_SIZE;
             ballVelocityY = -ballVelocityY;
+            bounceOccurred = true;
         }
 
         if (ballVelocityX < 0 && intersectsLeftPaddle()) {
             ballX = leftPaddleX + PADDLE_WIDTH;
             ballVelocityX = -ballVelocityX;
+            bounceOccurred = true;
         } else if (ballVelocityX > 0 && intersectsRightPaddle()) {
             ballX = rightPaddleX - BALL_SIZE;
             ballVelocityX = -ballVelocityX;
+            bounceOccurred = true;
         }
 
         if (ballX <= 0) {
@@ -146,5 +153,11 @@ public class GameModel {
 
     public int getRightLives() {
         return rightLives;
+    }
+
+    public boolean consumeBounce() {
+        boolean bounced = bounceOccurred;
+        bounceOccurred = false;
+        return bounced;
     }
 }

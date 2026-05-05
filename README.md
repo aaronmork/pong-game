@@ -90,3 +90,9 @@ I want to add the word PONG BY AARON on the botton of the window, which file wou
 
 Result:
 I thought it would be in the view file but I just wanted to make sure. It added it perfectly and had no problems.
+
+Prompt 10:
+I want to make it so everytime the ball hit off a wall, or off a players slab a ding sound occurs. Where would this file be placed?
+
+Result:
+AI added a boolean in places where the ball was coded. I overlooked the code it wrote until I understood it fairy well. When I tested out the game it was successful in adding a ping sound everytime the ball bounced.
