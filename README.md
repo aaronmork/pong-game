@@ -86,12 +86,12 @@ Result:
 It told me it would only change in the GameModel file. Once I read over the code and understood it I asked it to add the code into the file. The result turned out great and everytime a live was lost the ball increased in speed.
 
 Prompt 10:
-I want to add the word PONG BY AARON on the botton of the window, which file would that go in?
+I want to add the word PONG on the botton of the window, which file would that go in?
 
 Result:
-I thought it would be in the view file but I just wanted to make sure. It added it perfectly and had no problems.
+I thought it would be in the view file but I just wanted to make sure. It added it perfectly and had no problems. But after it added the word PONG, I thought it would be better to kinda watermark this game by adding "BY AARON" after.
 
-Prompt 10:
+Prompt 11:
 I want to make it so everytime the ball hit off a wall, or off a players slab a ding sound occurs. Where would this file be placed?
 
 Result:
